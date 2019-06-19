@@ -1,7 +1,7 @@
 import React from 'react'
 
-import AppRoot from './src/AppRoot'
+import Navigation from './src/Navigation'
 
 export default function App() {
-  return <AppRoot />
+  return <Navigation />
 }
