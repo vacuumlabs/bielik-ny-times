@@ -2,13 +2,20 @@
 
 Sample application for fetching and displaying NY Times articles using React Native (Expo)
 
+## Configuration
+
+App can be configured via environment variables (see `./src/app/config.js`)
+
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `yarn start`
+### `API_KEY=sample-key yarn start`
 
-Runs the app in the development mode.
+Runs the app in the development.
+Key for nytimes API needs to be set here as environment variable.
+
+Note: to apply new configuration it is sometimes needed to clear expo's cache (run command with `--clear` flag)
 
 ### `yarn test`
 
