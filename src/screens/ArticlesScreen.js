@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
-import Articles from '../containers/Articles'
-import OpenDrawerButton from '../components/OpenDrawerButton'
+import Articles from '../components/articles/Articles'
+import OpenDrawerButton from '../components/navigation/OpenDrawerButton'
 
 export default class ArticlesScreen extends Component {
   static navigationOptions = ({ navigation }) => ({

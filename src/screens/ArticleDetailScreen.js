@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import ArticleDetail from '../containers/ArticleDetail'
+import ArticleDetail from '../components/articles/ArticleDetail'
 
 export default class ArticleDetailScreen extends Component {
   render() {

@@ -1,8 +1,8 @@
 import { FlatList, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-import { ArticleListItem } from '../components/ArticleListItem'
-import { useMostViewedArticles } from '../app/api'
+import { ArticleListItem } from './ArticleListItem'
+import { useMostViewedArticles } from '../../app/api'
 
 export default function Articles({ navigation }) {
   const [data, loading, error] = useMostViewedArticles(7)
@@ -18,7 +18,7 @@ export default function Articles({ navigation }) {
         data={data.results}
         keyExtractor={item => `${item.id}`}
         renderItem={({ item }) => (
-          <ArticleListItem item={item} navigation={navigation} />
+          <ArticleListItem article={item} navigation={navigation} />
         )}
       />
     </View>
@@ -26,10 +26,5 @@ export default function Articles({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+  container: {},
 })
