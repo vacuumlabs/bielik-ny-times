@@ -1,15 +1,17 @@
+import { parseArticleImage } from '../model/Image'
+
 const sortByWidthAsc = (a, b) => a.width - b.width
 
 /**
  * Searches for an article image, with appropriate size.
- * @param {ViewedArticle} article article response object
+ * @param {ViewedArticle} articleResponse article response object
  * @see https://developer.nytimes.com/docs/most-popular-product/1/types/ViewedArticle
  */
-export function findArticleImage(article = {}, { minWidth = 0 } = {}) {
-  if (!article) {
+export function findArticleImage(articleResponse = {}, { minWidth = 0 } = {}) {
+  if (!articleResponse) {
     return null
   }
-  const { media = [] } = article
+  const { media = [] } = articleResponse
   const firstImage = media.find(m => m.type === 'image')
   if (!firstImage) {
     return null
@@ -18,8 +20,8 @@ export function findArticleImage(article = {}, { minWidth = 0 } = {}) {
   images.sort(sortByWidthAsc)
   const bestImage = images.find(image => image.width >= minWidth)
   if (bestImage) {
-    return bestImage
+    return parseArticleImage(bestImage)
   }
   const largestImage = images[images.length - 1]
-  return largestImage
+  return parseArticleImage(largestImage)
 }

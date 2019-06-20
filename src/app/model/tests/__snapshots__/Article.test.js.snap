@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Article parseArticleResponse should format response to custom object 1`] = `
+Array [
+  Object {
+    "abstract": "abstract1",
+    "authors": "author1",
+    "featuredImage": Object {
+      "height": 750,
+      "url": "url2",
+      "width": 750,
+    },
+    "id": 1,
+    "published": "2019-01-01",
+    "thumbnail": Object {
+      "height": 60,
+      "url": "url1",
+      "width": 60,
+    },
+    "title": "title1",
+    "url": "url1",
+  },
+  Object {
+    "abstract": "abstract2",
+    "authors": "author2",
+    "featuredImage": Object {
+      "height": 750,
+      "url": "url2",
+      "width": 750,
+    },
+    "id": 2,
+    "published": "2019-01-01",
+    "thumbnail": Object {
+      "height": 60,
+      "url": "url1",
+      "width": 60,
+    },
+    "title": "title2",
+    "url": "url2",
+  },
+]
+`;

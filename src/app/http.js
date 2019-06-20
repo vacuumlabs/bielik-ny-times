@@ -1,7 +1,14 @@
+import { identity } from 'lodash'
 import { useEffect, useState } from 'react'
 
 /** Hook that fetches data and parse response to object literal */
-export function useFetchJSON({ url, options, fetcher = fetch }) {
+export function useFetchJSON({
+  url,
+  options,
+  fetcher = fetch,
+  parseResponse = identity, // response formatter function
+  parseError = identity, // error response formatter function
+}) {
   const [state, setState] = useState({
     data: null,
     loading: true,
@@ -11,7 +18,7 @@ export function useFetchJSON({ url, options, fetcher = fetch }) {
   const refresh = () => setVersion(version + 1) // refetch data
   useEffect(() => {
     setState({
-      data: state.data,
+      data: parseResponse(state.data),
       loading: true,
       error: null,
     })
@@ -28,7 +35,7 @@ export function useFetchJSON({ url, options, fetcher = fetch }) {
       .then(data =>
         // fetch succeeded
         setState({
-          data,
+          data: parseResponse(data),
           loading: false,
           error: null,
         })
@@ -39,7 +46,7 @@ export function useFetchJSON({ url, options, fetcher = fetch }) {
         setState({
           data: null,
           loading: false,
-          error,
+          error: parseError(error),
         })
       })
   }, [version])

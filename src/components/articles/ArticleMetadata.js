@@ -18,11 +18,11 @@ const CalendarIcon = () => (
 const ArticleMetadata = ({ article, style }) => (
   <View style={[styles.container, style]}>
     <View style={styles.authors}>
-      <SecondaryText>{article.byline}</SecondaryText>
+      <SecondaryText>{article.authors}</SecondaryText>
     </View>
     <View style={styles.date}>
       <CalendarIcon />
-      <SecondaryText>{article.published_date}</SecondaryText>
+      <SecondaryText>{article.published}</SecondaryText>
     </View>
   </View>
 )

@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ApplicationError should not return if missing 1`] = `null`;
+
+exports[`ApplicationError should return NYT formatted error 1`] = `
+Object {
+  "message": "hello error",
+}
+`;
+
+exports[`ApplicationError should return NYT request error 1`] = `
+Object {
+  "message": "hello error",
+}
+`;
+
+exports[`ApplicationError should return unknown error 1`] = `
+Object {
+  "message": "Unexpected error has occured :(",
+}
+`;

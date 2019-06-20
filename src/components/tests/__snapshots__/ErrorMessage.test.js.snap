@@ -2,7 +2,7 @@
 
 exports[`ErrorMessage should not render if missing 1`] = `null`;
 
-exports[`ErrorMessage should render NYT formatted error 1`] = `
+exports[`ErrorMessage should render application error 1`] = `
 <Text
   style={
     Object {
@@ -11,33 +11,7 @@ exports[`ErrorMessage should render NYT formatted error 1`] = `
   }
 >
   Error: 
-  hello error
-</Text>
-`;
-
-exports[`ErrorMessage should render NYT request error 1`] = `
-<Text
-  style={
-    Object {
-      "color": "red",
-    }
-  }
->
-  Error: 
-  hello error
-</Text>
-`;
-
-exports[`ErrorMessage should render text error 1`] = `
-<Text
-  style={
-    Object {
-      "color": "red",
-    }
-  }
->
-  Error: 
-  hello error
+  app error
 </Text>
 `;
 

@@ -1,5 +1,7 @@
 import qs from 'qs'
 
+import { parseArticleError } from './model/ApplicationError'
+import { parseArticleResponse } from './model/Article'
 import { useFetchJSON } from './http'
 import config from './config'
 
@@ -19,15 +21,13 @@ function makeUrl(resource, params) {
 /**
  * Fetches latest most viewed articles for given period.
  * @param {number} daysPeriod - n.o. days how far back to fetch data
- * @return {response} object with keys:
- *   - results - array of ViewedArticle
- *   - status
- *   - copyright
- *   - num_results
- * @see https://developer.nytimes.com/docs/most-popular-product/1/types/ViewedArticle
+ * @return {result} hook result of useFetchJSON with formatted article data
+ * @see Article.js
  */
 export function useMostViewedArticles(daysPeriod) {
   return useFetchJSON({
     url: makeUrl(`/svc/mostpopular/v2/viewed/${daysPeriod}.json`),
+    parseResponse: parseArticleResponse,
+    parseError: parseArticleError,
   })
 }

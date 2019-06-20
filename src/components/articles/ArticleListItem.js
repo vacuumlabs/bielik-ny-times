@@ -1,24 +1,21 @@
 import { StyleSheet, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 
+import { ARTICLE_THUMBNAIL_SIZE } from '../../app/model/Article'
 import { Paragraph } from '../Typography'
 import { Thumbnail } from '../Thumbnail'
 import { articleRoutes } from '../../app/routes'
-import { findArticleImage } from '../../app/utils/articleUtils'
 import ArticleMetadata from './ArticleMetadata'
 import theme from '../../app/theme'
 
-const THUMBNAIL_SIZE = 60
-
 export function ArticleListItem({ article, navigation }) {
-  const image = findArticleImage(article, { minWidth: THUMBNAIL_SIZE })
   return (
     <TouchableOpacity
       onPress={() => navigation.navigate(articleRoutes.ArticleDetail, article)}
     >
       <View style={styles.container}>
         <View style={styles.leftContainer}>
-          <Thumbnail image={image} size={THUMBNAIL_SIZE} />
+          <Thumbnail image={article.thumbnail} size={ARTICLE_THUMBNAIL_SIZE} />
         </View>
         <View style={styles.contentContainer}>
           <Paragraph numberOfLines={2}>{article.title}</Paragraph>

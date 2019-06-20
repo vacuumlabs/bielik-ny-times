@@ -1,22 +1,22 @@
 import { findArticleImage } from '../articleUtils'
 
 describe('articleUtils', () => {
-  const article = {
-    media: [
-      {
-        type: 'sometype',
-      },
-      {
-        type: 'image',
-        'media-metadata': [
-          { url: 'a', width: 10 },
-          { url: 'b', width: 20 },
-          { url: 'c', width: 30 },
-        ],
-      },
-    ],
-  }
   describe('findArticleImage', () => {
+    const article = {
+      media: [
+        {
+          type: 'sometype',
+        },
+        {
+          type: 'image',
+          'media-metadata': [
+            { url: 'a', width: 10 },
+            { url: 'b', width: 20 },
+            { url: 'c', width: 30 },
+          ],
+        },
+      ],
+    }
     it('should not fail on empty article', () =>
       expect(findArticleImage(null)).toBe(null))
 
