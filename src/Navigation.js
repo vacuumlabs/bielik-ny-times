@@ -24,15 +24,22 @@ const ArticlesNavigator = createStackNavigator(
     defaultNavigationOptions: {
       headerStyle: {
         backgroundColor: theme.colors.primary,
+        height: 65,
       },
       headerTitleStyle: {
         color: theme.colors.white,
+        marginLeft: 0,
       },
       headerBackTitleStyle: {
         color: theme.colors.white,
       },
       headerBackImage: (
-        <Icon material name="arrow-back" size={35} color={theme.colors.white} />
+        <Icon
+          material
+          name="arrow-back"
+          size={theme.icon.md}
+          color={theme.colors.white}
+        />
       ),
     },
   }

@@ -9,7 +9,7 @@ const CalendarIcon = () => (
   <Icon
     materialCommunity
     name="calendar"
-    size={15}
+    size={theme.icon.sm}
     color="gray"
     style={{ marginRight: 3 }}
   />

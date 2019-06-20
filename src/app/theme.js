@@ -12,6 +12,10 @@ export default {
       title: 20,
     },
   },
+  icon: {
+    md: 30,
+    sm: 15,
+  },
   padding: {
     sm: 10,
     md: 20,

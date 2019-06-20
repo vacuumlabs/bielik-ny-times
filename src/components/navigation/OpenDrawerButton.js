@@ -10,7 +10,12 @@ export default function OpenDrawerButton({ navigation }) {
       onPress={() => navigation.openDrawer()}
       style={styles.container}
     >
-      <Icon material name="menu" size={35} color={theme.colors.white} />
+      <Icon
+        material
+        name="menu"
+        size={theme.icon.md}
+        color={theme.colors.white}
+      />
     </TouchableOpacity>
   )
 }
