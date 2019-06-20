@@ -12,6 +12,9 @@ const TextError = ({ children }) => (
  * Component that can display various types of errors
  */
 export default function ErrorMessage({ error }) {
+  if (!error) {
+    return null
+  }
   if (isString(error)) {
     return <TextError>{error}</TextError>
   }

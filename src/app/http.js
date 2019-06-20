@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
 /** Hook that fetches data and parse response to object literal */
-export function useFetchJSON({ url, options }) {
+export function useFetchJSON({ url, options, fetcher = fetch }) {
   const [state, setState] = useState({
     data: null,
     loading: true,
@@ -15,7 +15,7 @@ export function useFetchJSON({ url, options }) {
       loading: true,
       error: null,
     })
-    fetch(url, options)
+    fetcher(url, options)
       .then(response =>
         response.json().then(data => {
           if (!response.ok) {

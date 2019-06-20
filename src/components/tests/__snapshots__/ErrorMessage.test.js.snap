@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorMessage should not render if missing 1`] = `null`;
+
+exports[`ErrorMessage should render NYT formatted error 1`] = `
+<Text
+  style={
+    Object {
+      "color": "red",
+    }
+  }
+>
+  Error: 
+  hello error
+</Text>
+`;
+
+exports[`ErrorMessage should render NYT request error 1`] = `
+<Text
+  style={
+    Object {
+      "color": "red",
+    }
+  }
+>
+  Error: 
+  hello error
+</Text>
+`;
+
+exports[`ErrorMessage should render text error 1`] = `
+<Text
+  style={
+    Object {
+      "color": "red",
+    }
+  }
+>
+  Error: 
+  hello error
+</Text>
+`;
+
+exports[`ErrorMessage should render unknown error 1`] = `
+<Text
+  style={
+    Object {
+      "color": "red",
+    }
+  }
+>
+  Error: 
+  Unexpected error occured :(
+</Text>
+`;

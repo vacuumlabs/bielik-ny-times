@@ -8,10 +8,9 @@ import ErrorMessage from '../ErrorMessage'
 export default function Articles({ navigation }) {
   const [data, loading, error, { refresh }] = useMostViewedArticles(7)
   const articles = get(data, 'results', [])
-  const errorElement = error && <ErrorMessage error={error} />
   return (
     <>
-      {errorElement}
+      <ErrorMessage error={error} />
       <ArticleList
         articles={articles}
         navigation={navigation}
