@@ -3,6 +3,7 @@ import React from 'react'
 
 import { SecondaryText } from '../Typography'
 import Icon from '../Icon'
+import theme from '../../app/theme'
 
 const CalendarIcon = () => (
   <Icon
@@ -26,11 +27,15 @@ const ArticleMetadata = ({ article, style }) => (
   </View>
 )
 
+const {
+  padding: { sm },
+} = theme
+
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'flex-start',
-    marginTop: 5,
+    marginTop: sm / 2,
   },
   date: {
     flexDirection: 'row',

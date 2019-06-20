@@ -6,6 +6,7 @@ import { Paragraph, Title } from '../Typography'
 import { findArticleImage } from '../../app/utils/articleUtils'
 import ArticleMetadata from './ArticleMetadata'
 import Hyperlink from '../Hyperlink'
+import theme from '../../app/theme'
 
 export default function ArticleDetail({ article }) {
   const { width } = Dimensions.get('window')
@@ -26,20 +27,24 @@ export default function ArticleDetail({ article }) {
   )
 }
 
+const {
+  padding: { sm, md },
+} = theme
+
 const styles = StyleSheet.create({
   content: {
-    padding: 10,
+    padding: sm,
   },
   title: {
-    marginTop: 10,
+    marginTop: sm,
   },
   abstract: {
-    marginTop: 10,
+    marginTop: sm,
   },
   metadata: {
-    marginTop: 20,
+    marginTop: md,
   },
   readMore: {
-    marginTop: 20,
+    marginTop: md,
   },
 })

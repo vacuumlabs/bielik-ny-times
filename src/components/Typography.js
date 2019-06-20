@@ -1,8 +1,10 @@
 import { StyleSheet, Text } from 'react-native'
 import React from 'react'
 
+import theme from '../app/theme'
+
 export const SecondaryText = props => (
-  <Text {...props} style={[props.style, styles.meta]} />
+  <Text {...props} style={[props.style, styles.secondaryText]} />
 )
 
 export const Paragraph = props => (
@@ -14,15 +16,15 @@ export const Title = props => (
 )
 
 const styles = StyleSheet.create({
-  meta: {
-    color: 'gray',
+  secondaryText: {
+    color: theme.colors.secondaryText,
   },
   paragraph: {
-    color: 'black',
+    color: theme.colors.text,
   },
   title: {
-    color: 'black',
-    fontSize: 20,
+    color: theme.colors.text,
+    fontSize: theme.fonts.size.title,
     fontWeight: 'bold',
   },
 })

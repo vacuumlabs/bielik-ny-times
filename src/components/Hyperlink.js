@@ -7,6 +7,8 @@ import {
 } from 'react-native'
 import React from 'react'
 
+import theme from '../app/theme'
+
 export default function Hyperlink({ children, style, url, ...other }) {
   return (
     <TouchableOpacity
@@ -34,6 +36,6 @@ export default function Hyperlink({ children, style, url, ...other }) {
 
 const styles = StyleSheet.create({
   text: {
-    color: 'blue',
+    color: theme.colors.hyperlink,
   },
 })

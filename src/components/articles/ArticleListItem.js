@@ -6,6 +6,7 @@ import { Thumbnail } from '../Thumbnail'
 import { articleRoutes } from '../../app/routes'
 import { findArticleImage } from '../../app/utils/articleUtils'
 import ArticleMetadata from './ArticleMetadata'
+import theme from '../../app/theme'
 
 const THUMBNAIL_SIZE = 60
 
@@ -28,16 +29,20 @@ export function ArticleListItem({ article, navigation }) {
   )
 }
 
+const {
+  padding: { sm },
+} = theme
+
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    paddingTop: 10,
-    paddingBottom: 10,
+    paddingTop: sm,
+    paddingBottom: sm,
   },
   contentContainer: {
     flex: 1,
-    paddingLeft: 10,
-    paddingRight: 10,
+    paddingLeft: sm,
+    paddingRight: sm,
   },
   leftContainer: {
     alignItems: 'center',

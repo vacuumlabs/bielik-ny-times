@@ -2,6 +2,8 @@ import { StyleSheet, Text } from 'react-native'
 import { isString, get } from 'lodash'
 import React from 'react'
 
+import theme from '../app/theme'
+
 const TextError = ({ children }) => (
   <Text style={styles.error}>Error: {children}</Text>
 )
@@ -28,6 +30,6 @@ export default function ErrorMessage({ error }) {
 
 const styles = StyleSheet.create({
   error: {
-    color: 'red',
+    color: theme.colors.danger,
   },
 })
