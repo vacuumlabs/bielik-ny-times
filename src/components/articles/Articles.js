@@ -1,30 +1,23 @@
-import { FlatList, StyleSheet, Text, View } from 'react-native'
+import { get } from 'lodash'
 import React from 'react'
 
-import { ArticleListItem } from './ArticleListItem'
 import { useMostViewedArticles } from '../../app/api'
+import ArticleList from './ArticleList'
+import ErrorMessage from '../ErrorMessage'
 
 export default function Articles({ navigation }) {
-  const [data, loading, error] = useMostViewedArticles(7)
-  if (loading) {
-    return <Text>Loading</Text>
-  }
-  if (error) {
-    return <Text>Error occured :(</Text>
-  }
+  const [data, loading, error, { refresh }] = useMostViewedArticles(7)
+  const articles = get(data, 'results', [])
+  const errorElement = error && <ErrorMessage error={error} />
   return (
-    <View style={styles.container}>
-      <FlatList
-        data={data.results}
-        keyExtractor={item => `${item.id}`}
-        renderItem={({ item }) => (
-          <ArticleListItem article={item} navigation={navigation} />
-        )}
+    <>
+      {errorElement}
+      <ArticleList
+        articles={articles}
+        navigation={navigation}
+        refreshing={loading}
+        refresh={refresh}
       />
-    </View>
+    </>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {},
-})

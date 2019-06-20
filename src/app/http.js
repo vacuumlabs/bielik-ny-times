@@ -7,7 +7,14 @@ export function useFetchJSON({ url, options }) {
     loading: true,
     error: null,
   })
+  const [version, setVersion] = useState(0)
+  const refresh = () => setVersion(version + 1) // refetch data
   useEffect(() => {
+    setState({
+      data: state.data,
+      loading: true,
+      error: null,
+    })
     fetch(url, options)
       .then(response =>
         response.json().then(data => {
@@ -26,14 +33,15 @@ export function useFetchJSON({ url, options }) {
           error: null,
         })
       )
-      .catch(error =>
+      .catch(error => {
         // fetch failed
+        console.warn('request failed', error)
         setState({
           data: null,
           loading: false,
           error,
         })
-      )
-  }, [])
-  return [state.data, state.loading, state.error]
+      })
+  }, [version])
+  return [state.data, state.loading, state.error, { refresh }]
 }

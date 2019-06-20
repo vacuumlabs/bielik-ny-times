@@ -20,7 +20,7 @@ export default function Hyperlink({ children, style, url, ...other }) {
             Alert.alert("Can't open the link")
           }
         } catch (err) {
-          console.error('An error occurred', err)
+          console.warn('An error occurred', err)
           Alert.alert('Error opening the link')
         }
       }}
