@@ -1,10 +1,11 @@
 # NY Times Most Popular Articles
 
-Sample application for fetching and displaying NY Times articles using React Native (Expo)
+Sample application for fetching and displaying NY Times articles using React Native (Expo).
 
-Sample app is published to expo host: [https://expo.io/@martin.bielik/ny-times-news](https://expo.io/@martin.bielik/ny-times-news).
+Application is also published to expo host: [https://expo.io/@martin.bielik/ny-times-news](https://expo.io/@martin.bielik/ny-times-news).
 You can try it by scaning QR code with Expo app on Android.
 
+*Note: application was developed and tested on Android device, it may not work on iOS.*
 
 ## Configuration
 
@@ -12,14 +13,19 @@ App can be configured via environment variables (see `./src/app/config.js`)
 
 ## Available Scripts
 
+In order to run scripts, nodejs and yarn packager have to be installed.
 In the project directory, you can run:
+
+### `yarn install`
+
+Installs all required project dependencies.
 
 ### `API_KEY=sample-key yarn start`
 
 Runs the app in the development.
 Key for nytimes API needs to be set here as environment variable.
 
-Note: to apply new configuration it is sometimes needed to clear expo's cache (run command with `--clear` flag)
+*Note: to apply new configuration it is sometimes needed to clear expo's cache (run command with `--clear` flag)*
 
 ### `yarn test`
 
