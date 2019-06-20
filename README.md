@@ -2,6 +2,10 @@
 
 Sample application for fetching and displaying NY Times articles using React Native (Expo)
 
+Sample app is published to expo host: [https://expo.io/@martin.bielik/ny-times-news](https://expo.io/@martin.bielik/ny-times-news).
+You can try it by scaning QR code with Expo app on Android.
+
+
 ## Configuration
 
 App can be configured via environment variables (see `./src/app/config.js`)
